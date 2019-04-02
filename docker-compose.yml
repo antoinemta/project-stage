@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  db:
+    build: .
+    restart: always
+    environment:
+      - "MYSQL_ROOT_PASSWORD=password"
+    ports:
+      - "3307:3306"
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8002:80"
